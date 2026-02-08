@@ -1,6 +1,6 @@
 # Snake Game by Trae
 
-A classic Snake game implementation in Python using Pygame, featuring multiple difficulty levels, acceleration mechanics, and background music.
+A classic Snake game implementation in Python using Pygame, featuring multiple difficulty levels, acceleration mechanics, rich visual effects, and immersive sound effects.
 
 ## Features
 
@@ -8,7 +8,17 @@ A classic Snake game implementation in Python using Pygame, featuring multiple d
 - **Difficulty Selection**: Choose from Easy, Medium, or Hard speeds at the start.
 - **Turbo Boost**: Hold down the arrow key of your current direction to double your speed.
 - **Smart Controls**: Prevents accidental 180-degree turns that would cause instant death.
-- **Background Music**: Enjoy retro-style background music while playing.
+- **Rich Visual Effects**:
+  - Custom sprite graphics for snake (head with eyes that rotates based on direction)
+  - Animated body segments with gradient effects
+  - Food items rendered as apples with highlights
+  - Subtle grid background for better depth perception
+  - Particle effects when eating food
+- **Immersive Sound Effects**:
+  - Background music that loops continuously
+  - Eating sound effect when collecting food
+  - Game over sound when collision occurs
+  - Level up sound every 5 points
 - **Score Tracking**: Real-time score display.
 
 ## Prerequisites
@@ -47,7 +57,16 @@ A classic Snake game implementation in Python using Pygame, featuring multiple d
 
 -   `snake.py`: The main game source code.
 -   `requirements.txt`: Python dependencies.
--   `background_music.mp3`: Game background audio.
+-   `resources/`: Directory containing all game assets:
+    -   `images/`: Snake sprites, food images, and background tiles
+    -   `sounds/`: Sound effects (eat, game over, level up)
+    -   `music/`: Background music file
+
+## Game Screenshots
+
+![Snake Game Screenshot](https://github.com/user-attachments/assets/c87b6582-0999-44f6-9326-fcacf85ba20d)
+
+*The enhanced snake game with sprite graphics, particle effects, and visual improvements*
 
 ## Build Executable (Windows)
 
@@ -60,9 +79,28 @@ To convert the game into a standalone `.exe` file that can run on Windows withou
 
 2.  Run the build command:
     ```bash
-    pyinstaller --onefile --noconsole --add-data "background_music.mp3;." snake.py
+    pyinstaller --onefile --noconsole --add-data "resources;resources" snake.py
     ```
 
 3.  The executable will be generated in the `dist/` folder as `snake.exe`.
+
+**Note**: The `--add-data` parameter has been updated to include the entire `resources` folder with all visual and sound assets.
+
+## Technical Details
+
+### Visual Assets
+All visual assets are procedurally generated using Python's PIL (Pillow) library and stored in the `resources/images/` directory:
+- Snake head sprites (4 directional variants with eyes)
+- Snake body segments with gradient shading
+- Food items (apple with highlights and stem)
+- Background grid tiles for depth
+
+### Sound Assets
+Sound effects are generated using NumPy with synthesized waveforms and stored in the `resources/sounds/` directory:
+- Eating sound: Short chirp with exponential decay
+- Game over sound: Descending tone effect
+- Level up sound: Ascending harmonic progression
+
+All assets are lightweight and optimized for game performance.
 
 Enjoy the game!
