@@ -17,3 +17,6 @@ dist/
 .venv
 env/
 venv/
+
+# Temporary scripts
+generate_assets.py
