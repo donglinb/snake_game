@@ -209,7 +209,7 @@ def gameLoop(snake_speed):
 
     snake_List = []
     Length_of_snake = 1
-    prev_length = 1
+    last_level_up_score = 0  # Track last score when level up sound played
 
     foodx = round(random.randrange(0, WIDTH - snake_block) / 10.0) * 10.0
     foody = round(random.randrange(0, HEIGHT - snake_block) / 10.0) * 10.0
@@ -309,9 +309,12 @@ def gameLoop(snake_speed):
             foody = round(random.randrange(0, HEIGHT - snake_block) / 10.0) * 10.0
             Length_of_snake += 1
             
-            # Play level up sound every 5 points
-            if (Length_of_snake - 1) % 5 == 0 and level_up_sound and Length_of_snake > 1:
-                level_up_sound.play()
+            # Play level up sound every 5 points (only once per milestone)
+            current_score = Length_of_snake - 1
+            if current_score % 5 == 0 and current_score > 0 and current_score != last_level_up_score:
+                if level_up_sound:
+                    level_up_sound.play()
+                last_level_up_score = current_score
 
         current_speed = snake_speed
         keys = pygame.key.get_pressed()

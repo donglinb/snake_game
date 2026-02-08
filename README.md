@@ -10,7 +10,7 @@ A classic Snake game implementation in Python using Pygame, featuring multiple d
 - **Smart Controls**: Prevents accidental 180-degree turns that would cause instant death.
 - **Rich Visual Effects**:
   - Custom sprite graphics for snake (head with eyes that rotates based on direction)
-  - Animated body segments with gradient effects
+  - Body segments with gradient effects
   - Food items rendered as apples with highlights
   - Subtle grid background for better depth perception
   - Particle effects when eating food
