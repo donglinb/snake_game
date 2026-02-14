@@ -6,11 +6,31 @@ __pycache__/
 # PyInstaller
 *.manifest
 *.spec
-build/
 dist/
+
+# C++ / CMake build artifacts
+build/
+cmake-build-*/
+CMakeUserPresets.json
+
+# Compiled objects / binaries
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.exe
+*.out
 
 # VS Code
 .vscode/
+
+# IDE
+*.swp
+*.swo
+*~
+.idea/
+*.user
 
 # Environment
 .env

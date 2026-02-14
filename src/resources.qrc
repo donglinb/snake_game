@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/images">
+        <file alias="snake_head_up.png">../resources/images/snake_head_up.png</file>
+        <file alias="snake_head_down.png">../resources/images/snake_head_down.png</file>
+        <file alias="snake_head_left.png">../resources/images/snake_head_left.png</file>
+        <file alias="snake_head_right.png">../resources/images/snake_head_right.png</file>
+        <file alias="snake_body.png">../resources/images/snake_body.png</file>
+        <file alias="food.png">../resources/images/food.png</file>
+        <file alias="background_tile.png">../resources/images/background_tile.png</file>
+    </qresource>
+    <qresource prefix="/music">
+        <file alias="background_music.mp3">../resources/music/background_music.mp3</file>
+    </qresource>
+    <qresource prefix="/sounds">
+        <file alias="eat.wav">../resources/sounds/eat.wav</file>
+        <file alias="game_over.wav">../resources/sounds/game_over.wav</file>
+        <file alias="level_up.wav">../resources/sounds/level_up.wav</file>
+    </qresource>
+</RCC>
