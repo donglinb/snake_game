@@ -173,10 +173,11 @@ def select_speed():
     speed = 15
     while intro:
         dis.fill(BLACK)
-        message("Select Difficulty:", WHITE, -50)
-        message("1. Easy", GREEN, 0)
-        message("2. Medium", YELLOW, 50)
-        message("3. Hard", RED, 100)
+        message("Select Difficulty:", WHITE, -75)
+        message("1. Easy", GREEN, -25)
+        message("2. Medium", YELLOW, 25)
+        message("3. Hard", RED, 75)
+        message("Q. Quit", WHITE, 125)
         pygame.display.update()
 
         for event in pygame.event.get():
@@ -193,6 +194,9 @@ def select_speed():
                 elif event.key == pygame.K_3:
                     speed = 25
                     intro = False
+                elif event.key == pygame.K_q:
+                    pygame.quit()
+                    sys.exit()
     return speed
 
 def gameLoop(snake_speed):
